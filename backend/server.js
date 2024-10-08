@@ -19,6 +19,12 @@ app.get('/' , (req,res) => {
     res.send('Task Manager API');
 });
 
+// Task Routes
+const taskRoutes = require('./routes/taskRoutes');
+
+app.use('/tasks', taskRoutes);
+
+
 app.listen(PORT , ()=> {
     console.log("Hello Doss");
     console.log(`Server running on port ${PORT}`);
